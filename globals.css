@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{color-scheme:light}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f8fafc;color:#172033;font-family:Vazirmatn,ui-sans-serif,system-ui,sans-serif}
+*{border-color:#e2e8f0}
+::selection{background:#d4a72c33}
+.container-x{width:min(1180px,92%);margin-inline:auto}
+.hero-grid{background:radial-gradient(circle at 90% 10%,#2563eb1f,transparent 28%),linear-gradient(135deg,#0b1f3a,#102e52)}
+.glass{background:#ffffffd9;backdrop-filter:blur(14px)}
+.gold-line{height:2px;background:#d4a72c;width:62px}
