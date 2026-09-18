@@ -1,0 +1,281 @@
+import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card";
+import { services, demoUniversities } from "@/lib/demo-data";
+
+export default function Home() {
+  const trustItems = [
+    ["🎓", "مشاوره تخصصی"],
+    ["🏫", "انتخاب دانشگاه و رشته"],
+    ["✓", "پیگیری فرآیند پذیرش"],
+    ["🌏", "همراهی در مسیر تحصیل"],
+  ];
+
+  return (
+    <div>
+      <section className="hero-grid text-white">
+        <div className="container-x grid min-h-[650px] items-center gap-12 py-16 lg:grid-cols-2">
+          <div>
+            <span className="text-sm font-bold tracking-[.18em] text-gold">
+              MAQSADE NAHAYI FARDA • 2026
+            </span>
+            <h1 className="mt-5 text-5xl font-black leading-tight md:text-7xl">
+              مسیر تحصیل شما،
+              <br />
+              <span className="text-gold">از امروز آغاز می‌شود.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-9 text-slate-200">
+              با مقصد نهایی فردا، مسیر تحصیل در دانشگاه‌های چین و روسیه را
+              آگاهانه‌تر انتخاب کنید. از بررسی شرایط و انتخاب دانشگاه تا پذیرش
+              و آماده‌سازی برای سفر، در کنار شما هستیم.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/consultation"
+                className="rounded-xl bg-royal px-6 py-3 font-bold"
+              >
+                دریافت مشاوره تحصیلی
+              </Link>
+              <Link
+                href="/universities"
+                className="rounded-xl border border-white/30 px-6 py-3 font-bold"
+              >
+                مشاهده دانشگاه‌ها
+              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur">
+            <div className="flex min-h-[420px] items-end rounded-[1.5rem] bg-gradient-to-br from-blue-950 via-slate-800 to-slate-600 p-7">
+              <div>
+                <span className="rounded-full bg-gold px-3 py-1 text-xs font-black text-navy">
+                  پذیرش چین و روسیه
+                </span>
+                <h2 className="mt-4 text-3xl font-black">
+                  امروز تصمیم بگیر،
+                  <br />
+                  فردای متفاوتت را بساز.
+                </h2>
+                <p className="mt-3 text-slate-200">
+                  تصویر Hero را می‌توان از Media Library جایگزین کرد.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container-x">
+          <div className="mb-10">
+            <span className="text-xs font-black tracking-widest text-gold">
+              TRUST
+            </span>
+            <h2 className="mt-2 text-4xl font-black">
+              یک انتخاب آگاهانه، شروع یک آینده بهتر است.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-4">
+            {trustItems.map(([icon, title]) => (
+              <Card key={title}>
+                <CardContent>
+                  <div className="text-3xl">{icon}</div>
+                  <h3 className="mt-4 font-extrabold">{title}</h3>
+                  <p className="mt-2 text-sm text-muted">
+                    اطلاعات شفاف و همراهی مرحله‌به‌مرحله.
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-100 py-20">
+        <div className="container-x">
+          <h2 className="text-4xl font-black">مقصد تحصیلی خود را انتخاب کنید</h2>
+
+          <div className="mt-9 grid gap-6 md:grid-cols-2">
+            <Card>
+              <CardContent>
+                <span className="text-xs font-black text-gold">CHINA</span>
+                <h3 className="mt-2 text-3xl font-black">تحصیل در چین</h3>
+                <p className="mt-3 leading-8 text-muted">
+                  فرصت‌های متنوع تحصیلی، دانشگاه‌های بین‌المللی و گزینه‌های
+                  متعدد برای دانشجویان خارجی.
+                </p>
+                <Link
+                  className="mt-5 inline-block font-bold text-royal"
+                  href="/countries/china"
+                >
+                  تحصیل در چین ←
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent>
+                <span className="text-xs font-black text-gold">RUSSIA</span>
+                <h3 className="mt-2 text-3xl font-black">تحصیل در روسیه</h3>
+                <p className="mt-3 leading-8 text-muted">
+                  آشنایی با دانشگاه‌ها، رشته‌ها و مسیرهای تحصیلی روسیه با
+                  راهنمایی تخصصی.
+                </p>
+                <Link
+                  className="mt-5 inline-block font-bold text-royal"
+                  href="/countries/russia"
+                >
+                  تحصیل در روسیه ←
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-20">
+        <div className="container-x">
+          <h2 className="text-4xl font-black">
+            از انتخاب تا شروع تحصیل، همراه شما هستیم
+          </h2>
+
+          <div className="mt-9 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {services.map(([title, description]) => (
+              <Card key={title}>
+                <CardContent>
+                  <h3 className="text-xl font-extrabold">{title}</h3>
+                  <p className="mt-3 text-sm leading-8 text-muted">
+                    {description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container-x">
+          <div className="flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <span className="text-xs font-black text-gold">
+                RECENT ADMISSIONS
+              </span>
+              <h2 className="mt-2 text-4xl font-black">آخرین پذیرش‌های ما</h2>
+              <p className="mt-3 text-muted">
+                نمونه‌ای از تصاویر پذیرش ارائه‌شده توسط مؤسسه.
+              </p>
+            </div>
+
+            <Link
+              href="/admissions"
+              className="rounded-xl border px-5 py-3 font-bold"
+            >
+              مشاهده همه پذیرش‌ها
+            </Link>
+          </div>
+
+          <div className="mt-9 grid gap-5 md:grid-cols-3">
+            <img
+              src="/admissions/jiangsu-pre-admission-01.jpg"
+              alt="پذیرش Jiangsu University"
+              className="aspect-[4/3] w-full rounded-2xl border object-cover shadow-premium"
+            />
+            <img
+              src="/admissions/nantong-admission-01.jpg"
+              alt="پذیرش Nantong University"
+              className="aspect-[4/3] w-full rounded-2xl border object-cover shadow-premium"
+            />
+            <img
+              src="/admissions/wuhan-admission.jpg"
+              alt="پذیرش Wuhan University"
+              className="aspect-[4/3] w-full rounded-2xl border object-cover shadow-premium"
+            />
+          </div>
+
+          <div className="mt-9 rounded-2xl bg-slate-100 p-7">
+            <h3 className="text-xl font-black">
+              شاید پذیرش بعدی، شروع مسیر شما باشد.
+            </h3>
+            <p className="mt-2 text-muted">
+              شرایط تحصیلی خود را ارسال کنید تا گزینه‌های مناسب بررسی شود.
+            </p>
+            <Link
+              href="/consultation"
+              className="mt-5 inline-flex rounded-xl bg-royal px-6 py-3 font-bold text-white"
+            >
+              بررسی شرایط من
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-navy py-20 text-white">
+        <div className="container-x">
+          <div className="flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <span className="text-xs font-black text-gold">DEMO DATA</span>
+              <h2 className="mt-2 text-4xl font-black">دانشگاه‌ها</h2>
+            </div>
+            <Link
+              href="/universities"
+              className="rounded-xl bg-royal px-5 py-3 font-bold"
+            >
+              مشاهده همه
+            </Link>
+          </div>
+
+          <div className="mt-9 grid gap-5 md:grid-cols-3">
+            {demoUniversities.map((university) => (
+              <Card
+                key={university.id}
+                className="border-white/10 bg-white/5 text-white"
+              >
+                <CardContent>
+                  <span className="text-xs text-gold">
+                    {university.country} • {university.type}
+                  </span>
+                  <h3 className="mt-2 text-xl font-bold">
+                    {university.name_fa}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-300">
+                    {university.description}
+                  </p>
+                  <Link
+                    className="mt-4 inline-block text-sm font-bold text-gold"
+                    href={`/universities/${university.slug}`}
+                  >
+                    جزئیات ←
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container-x rounded-3xl bg-gradient-to-l from-navy to-[#163b68] p-9 text-white md:p-14">
+          <span className="text-xs font-black text-gold">
+            BEFORE YOU CHOOSE
+          </span>
+          <h2 className="mt-3 text-3xl font-black">
+            قبل از انتخاب، آگاهانه تصمیم بگیرید
+          </h2>
+          <p className="mt-4 max-w-3xl leading-8 text-slate-200">
+            انتخاب دانشگاه و کشور مقصد یک تصمیم مهم است. ما تلاش می‌کنیم
+            اطلاعات لازم درباره مسیر تحصیل، شرایط پذیرش و مراحل اقدام را شفاف
+            در اختیار شما قرار دهیم تا بتوانید با آگاهی بیشتری مسیر خود را
+            انتخاب کنید.
+          </p>
+          <Link
+            href="/consultation"
+            className="mt-7 inline-flex rounded-xl bg-gold px-6 py-3 font-bold text-navy"
+          >
+            بررسی شرایط من
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
